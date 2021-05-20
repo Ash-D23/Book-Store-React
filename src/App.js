@@ -9,7 +9,8 @@ import CheckoutPage from './Pages/checkout/checkout.component';
 
 import { connect } from 'react-redux';
 import { setCurrentUser } from './redux/user/user.actions';
-import './App.css'
+import { GlobalStyle } from './global.styles';
+
 
 class App extends React.Component {
 
@@ -21,6 +22,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
+        <GlobalStyle />
         <Header />
         <Switch>
           <Route exact path='/' component={HomePage} />

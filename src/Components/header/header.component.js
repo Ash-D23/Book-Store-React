@@ -9,17 +9,15 @@ import CartDropdown from '../cart-dropdown/cart-dropdown.component';
 import './header.css'
 
 const Header = (props) => {
-  console.log(props)
   return(
   <div className='header'>
     <Link className='logo-container' to='/'>
-      Home
+      <i class="fas fa-book-open"></i>
     </Link>
     <div className='options'>
       <Link className='option' to='/shop'>
         SHOP
       </Link>
-      <br />
       {props.current ? (
        <div className='option' onClick={() => props.setsignout()}>
          SIGN OUT

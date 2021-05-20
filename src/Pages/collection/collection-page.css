@@ -1,0 +1,30 @@
+.coll-page{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+}
+
+.coll-page .coll-items{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.coll-item{
+  padding-right: 10px;
+  margin-bottom: 20px;
+}
+
+.coll-page .title{
+  font-size: 28px;
+  margin-bottom: 25px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 800px) {
+
+  .coll-page .coll-items{
+    display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 15px;
+  }
+}
