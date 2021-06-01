@@ -14,8 +14,8 @@ const Directory = ({ sections }) => (
 
 const mapStateToProps = (state) => {
   return {
-  sections: state.directory.sections
-}
+    sections: state.directory.sections
+  }
 };
 
 export default connect(mapStateToProps)(Directory);

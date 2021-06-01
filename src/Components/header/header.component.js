@@ -6,6 +6,8 @@ import { signout } from '../../redux/user/user.actions';
 
 import CartIcon from '../cart-icon/cart-icon.component';
 import CartDropdown from '../cart-dropdown/cart-dropdown.component';
+import Searchbar from '../Searchbar/Searchbar.component'
+import SearchContainer from '../SearchContainer/SearchContainer'
 import './header.css'
 
 const Header = (props) => {
@@ -14,6 +16,7 @@ const Header = (props) => {
     <Link className='logo-container' to='/'>
       <i class="fas fa-book-open"></i>
     </Link>
+    <Searchbar />
     <div className='options'>
       <Link className='option' to='/shop'>
         SHOP
@@ -29,6 +32,7 @@ const Header = (props) => {
      )}
      <CartIcon />
     </div>
+    {props.searchhidden ? null : <SearchContainer />}
     {props.hidden ? null : <CartDropdown />}
   </div>
 )
@@ -36,7 +40,9 @@ const Header = (props) => {
 
 const mapStateToProps = (state) => {
   return {current: state.user.currentUser,
-  hidden: state.cart.hidden}
+  hidden: state.cart.hidden,
+  searchhidden: state.search.searchhidden
+}
 }
 
 const mapDispatchToProps = dispatch => ({
